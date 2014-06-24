@@ -1,4 +1,4 @@
-;;; hub.el ---hub helps you win at git.
+;;; hub.el --- hub helps you win at git with emacs.
 ;;
 ;; Copyright © 2014 Travis Jeffery
 ;;
