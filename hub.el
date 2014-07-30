@@ -6,7 +6,7 @@
 ;; URL: https://github.com/travisjeffery/hub.el
 ;; Version: 1.0.0
 ;; Keywords: github git
-;; Package-Requires: ((gh "0.8.0") (helm "1.6.2") (magit "90140729"))
+;; Package-Requires: ((gh "0.8.0") (helm "1.6.2") (magit "1.2.1"))
 
 ;; This file is not part of GNU Emacs.
 
