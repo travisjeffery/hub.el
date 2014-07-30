@@ -6,6 +6,7 @@
 ;; URL: https://github.com/travisjeffery/hub.el
 ;; Version: 1.0.0
 ;; Keywords: github git
+;; Package-Requires: ((gh "0.8.0") (helm "1.6.2") (magit "90140729"))
 
 ;; This file is not part of GNU Emacs.
 
@@ -39,6 +40,7 @@
 
 ;; Interactive
 
+;;;###autoload
 (defun hub-list-pull-requests ()
   "View an actionable list of pull requests on GitHub."
   (interactive)
@@ -48,6 +50,7 @@
       (helm :sources '(hub--pulls-source)
             :buffer  "*open github*"))))
 
+;;;###autoload
 (defun hub-open-pull-request ()
   "Open a pull request on GitHub."
   (interactive)
@@ -56,31 +59,37 @@
         (magit-git-standard-options '()))
     (magit-commit-internal "pull-request" nil)))
 
+;;;###autoload
 (defun hub-fork ()
   "Make a fork of a remote repository on GitHub and add as remote."
   (interactive)
   (hub--command-one-line "fork"))
 
+;;;###autoload
 (defun hub-create (name)
   "Create this repository on GitHub and add GitHub as origin."
   (interactive "sName: ")
   (hub--command-one-line "create"))
 
+;;;###autoload
 (defun hub-browse ()
   "Open a GitHub page in the default browser."
   (interactive)
   (hub--command-one-line "browse"))
 
+;;;###autoload
 (defun hub-compare ()
   "Open a GitHub compare view page in the system's default web browser."
   (interactive)
   (hub--command-one-line "compare"))
 
+;;;###autoload
 (defun hub-checkout (url)
   "Checkout the branch of a Pull Request."
   (interactive "sURL: ")
   (hub--command-one-line (format "checkout %s" url)))
 
+;;;###autoload
 (defun hub-merge (url)
   "Merge the branch of a Pull Request."
   (interactive "sURL: ")
